@@ -1,9 +1,8 @@
-<!doctype html>
+<!-- <!doctype html>
 <html>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
@@ -32,4 +31,21 @@
         <p class="text-white">Copyright (c)</p>
     </footer>
   </body>
-</html>
+</html> -->
+
+{% extends 'djangoproj/base.html' %}
+
+{% block content %}
+<h1 class="text-3xl">About</h1>
+
+<div class="mt-6 space-y-6">
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita velit, eum quod labore in corrupti officia esse sequi ad nostrum? Dicta fugit vero voluptatem consequuntur inventore libero a ex! Qui?
+  Repellendus cumque corporis dolorum fuga asperiores! Voluptatibus tenetur eaque provident nemo quaerat dolores, aspernatur expedita iusto non! Enim quam, in sint doloribus amet possimus temporibus at qui libero tempora atque?
+  Doloribus cupiditate repellat, temporibus sed fugit magni beatae esse non qui, voluptate, illum ipsum accusantium dicta sapiente? Culpa soluta aut placeat officia, hic doloribus nobis autem cupiditate rerum, architecto reiciendis!
+  Temporibus sint impedit quam a molestiae perspiciatis, dolor recusandae eveniet ad, repellat fugit, nisi autem voluptates. Suscipit ea numquam nisi, sed ex nostrum qui autem consectetur fugiat? Nemo, quae ullam!</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita velit, eum quod labore in corrupti officia esse sequi ad nostrum? Dicta fugit vero voluptatem consequuntur inventore libero a ex! Qui?
+    Repellendus cumque corporis dolorum fuga asperiores! Voluptatibus tenetur eaque provident nemo quaerat dolores, aspernatur expedita iusto non! Enim quam, in sint doloribus amet possimus temporibus at qui libero tempora atque?
+    Doloribus cupiditate repellat, temporibus sed fugit magni beatae esse non qui, voluptate, illum ipsum accusantium dicta sapiente? Culpa soluta aut placeat officia, hic doloribus nobis autem cupiditate rerum, architecto reiciendis!
+    Temporibus sint impedit quam a molestiae perspiciatis, dolor recusandae eveniet ad, repellat fugit, nisi autem voluptates. Suscipit ea numquam nisi, sed ex nostrum qui autem consectetur fugiat? Nemo, quae ullam!</p>
+</div>
+{% endblock %}
