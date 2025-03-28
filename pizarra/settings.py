@@ -30,6 +30,12 @@ ALLOWED_HOSTS = []
 
 AUTH_USER_MODEL = 'account.User'
 
+STATIC_URL = 'static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'project/static'),  # ✅ Include the static folder in your app
+]
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -42,6 +48,7 @@ INSTALLED_APPS = [
     'account',
     'djangoproj',
     'project',
+    'todolist',
 ]
 
 MIDDLEWARE = [

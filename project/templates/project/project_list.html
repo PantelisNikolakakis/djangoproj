@@ -1,0 +1,42 @@
+<div class="project-list mt-6 grid grid-cols-4 gap-4">
+    {% for project in projects %}
+        <div class="py-6 px-6 bg-slate-200">
+            <a href="{% url 'project:project' project.id %}" style="display: block;">
+                <h2 class="text-xl">{{ project.name }}</h2>
+
+                <p class="text-xm text-slate-600">
+                    {{ project.description }}
+                </p>
+            </a>
+        </div>
+    {% endfor %}
+</div>
+    <!-- <button onclick="ajax_function('{{i}}','{{title}}')">{{i}}</button> -->
+current: {{ projects.number }}
+page_list: {{ page_list }}
+<div class="pagination" style="margin-top: 20px;">
+    <nav class="isolate inline-flex -space-x-px rounded-md shadow-xs" aria-label="Pagination">
+        {% if projects.has_previous %}
+            <a href="?page={{ projects.previous_page_number }}" class="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-gray-300 ring-inset hover:bg-gray-50 focus:z-20 focus:outline-offset-0">
+            <span class="sr-only">Previous</span>
+            <svg class="size-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+                <path fill-rule="evenodd" d="M11.78 5.22a.75.75 0 0 1 0 1.06L8.06 10l3.72 3.72a.75.75 0 1 1-1.06 1.06l-4.25-4.25a.75.75 0 0 1 0-1.06l4.25-4.25a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd" />
+            </svg>
+            </a>
+        {% endif %}
+        <!-- Current: "z-10 bg-indigo-600 text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600", Default: "text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:outline-offset-0" -->
+        {% for i in page_list %}
+            <a href="?page={{ i }}" aria-current="page" class="relative z-10 inline-flex items-center {% if i == projects.number %}bg-indigo-600{% endif %} px-4 py-2 text-sm font-semibold {% if i == projects.number %}text-white{% else %}text-dark{% endif %} focus:z-20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                {{ i }}
+            </a>
+        {% endfor %}
+        {% if projects.has_next %}
+            <a href="?page={{ projects.next_page_number }}" class="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-gray-300 ring-inset hover:bg-gray-50 focus:z-20 focus:outline-offset-0">
+            <span class="sr-only">Next</span>
+            <svg class="size-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+                <path fill-rule="evenodd" d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+            </svg>
+            </a>
+        {% endif %}
+    </nav>
+</div>
